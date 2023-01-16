@@ -15,7 +15,12 @@ function getMoviesFromDirector(array, director) {
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
-  
+  const moviesFrom1Director = getMoviesFromDirector(array, director)
+  const sumScore = moviesFrom1Director.reduce((total, movie) => {total += movie.score; return total},0)
+  const howManyMovies = Number(moviesFrom1Director.length)
+  const average = Number((sumScore / howManyMovies).toFixed(2))
+
+  return average
 }
 
 // Exercise 4:  Alphabetic order by title 
